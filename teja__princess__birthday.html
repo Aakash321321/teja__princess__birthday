@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Teja Shree 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(180deg, #ffd9ec, #ff9acb);
+    overflow: hidden;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card */
+.card {
+    background: rgba(255,255,255,0.92);
+    border-radius: 35px;
+    padding: 28px 22px 40px;
+    text-align: center;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 15px 40px rgba(255,105,180,0.55);
+    position: relative;
+    z-index: 5;
+}
+
+/* Text */
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    color: #ff4f9a;
+    margin: 6px 0;
+}
+
+h2 {
+    font-size: 20px;
+    color: #ff6fae;
+    margin: 4px 0;
+}
+
+p {
+    font-size: 14px;
+    color: #ff5c9d;
+    margin: 4px 0;
+}
+
+/* Cats */
+.cats {
+    font-size: 30px;
+    margin: 12px 0;
+    animation: bounce 1.4s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    top: -20px;
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    to { transform: translateY(110vh); }
+}
+
+/* Balloons */
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    font-size: 35px;
+    animation: rise linear infinite;
+}
+
+@keyframes rise {
+    to { transform: translateY(-120vh); }
+}
+
+/* Sparkles */
+.sparkle {
+    position: absolute;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+/* Music */
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Signature */
+.signature {
+    position: absolute;
+    bottom: 12px;
+    right: 18px;
+    font-size: 13px;
+    font-family: 'Pacifico', cursive;
+    color: #ff5fa8;
+    opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Happy Birthday 🎂</h1>
+    <h2>My Cute Little Baby Princess 👑</h2>
+    <h1>Teja Shree 💕</h1>
+
+    <div class="cats">🐱🎀 🐱💗 🐱🎀</div>
+
+    <p>So tiny 🌸</p>
+    <p>So pure 🍓</p>
+    <p>So cuteee 🥹💞</p>
+    <p>You are my little miracle ✨</p>
+    <p>My heart stays near you always 💗</p>
+
+    <div class="cats">💖🐱 💕🐱 💖🐱</div>
+
+    <audio autoplay loop muted id="bgMusic">
+    <source src="happy-birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const music = document.getElementById("bgMusic");
+    music.muted = false;
+    music.play().catch(() => {
+        document.body.addEventListener("click", () => {
+            music.play();
+        }, { once: true });
+    });
+</script>
+
+    <div class="signature">
+        ~ by your one and only man Aakash 💗
+    </div>
+</div>
+
+<script>
+/* Hearts */
+for (let i = 0; i < 30; i++) {
+    let h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "💗";
+    h.style.left = Math.random()*100 + "vw";
+    h.style.fontSize = (16 + Math.random()*18) + "px";
+    h.style.animationDuration = (3 + Math.random()*5) + "s";
+    document.body.appendChild(h);
+}
+
+/* Balloons */
+const balloons = ["🎈","🎀","💖"];
+for (let i = 0; i < 10; i++) {
+    let b = document.createElement("div");
+    b.className = "balloon";
+    b.innerHTML = balloons[Math.floor(Math.random()*balloons.length)];
+    b.style.left = Math.random()*100 + "vw";
+    b.style.animationDuration = (6 + Math.random()*6) + "s";
+    document.body.appendChild(b);
+}
+
+/* Sparkles */
+for (let i = 0; i < 20; i++) {
+    let s = document.createElement("div");
+    s.className = "sparkle";
+    s.innerHTML = "✨";
+    s.style.left = Math.random()*100 + "vw";
+    s.style.top = Math.random()*100 + "vh";
+    s.style.fontSize = (12 + Math.random()*10) + "px";
+    document.body.appendChild(s);
+}
+</script>
+
+</body>
+</html>
